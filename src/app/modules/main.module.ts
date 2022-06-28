@@ -24,8 +24,12 @@ export interface FilterBy {
   term: string
 }
 
-export interface User {
-  name: string,
-  coins: number,
-  moves: Array<object>
+export class User {
+  constructor(public name: string = '', public coins: number = 100, public moves: Array<Move> = []) { }
+
+}
+
+export class Move {
+  constructor(public subjectId: string | number, public to: string, public at: number, public amount: number) { }
+
 }

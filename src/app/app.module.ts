@@ -14,6 +14,10 @@ import { ContactPreviewComponent } from './cmps/contact-preview/contact-preview.
 import { StatisticPageComponent } from './pages/statistic-page/statistic-page.component';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { AppHeaderComponent } from './cmps/app-header/app-header.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { MoveListComponent } from './cmps/move-list/move-list.component';
+import { TransferFundComponent } from './cmps/transfer-fund/transfer-fund.component';
+import { FilterContactsPipe } from './pipes/filter-contacts.pipe';
 
 @NgModule({
   declarations: [
@@ -26,6 +30,10 @@ import { AppHeaderComponent } from './cmps/app-header/app-header.component';
     ContactPreviewComponent,
     StatisticPageComponent,
     AppHeaderComponent,
+    SignupComponent,
+    MoveListComponent,
+    TransferFundComponent,
+    FilterContactsPipe,
   ],
   imports: [
     BrowserModule,

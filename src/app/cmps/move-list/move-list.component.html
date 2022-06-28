@@ -1,0 +1,11 @@
+<div class="move-list">
+    <h1 class="title" *ngIf="title">{{title}}</h1>
+    <h2 *ngIf="!moveList?.length">No transactions yet!</h2>
+    <ul [ngStyle]="{listStyle: 'none'}" class="list">
+        <li *ngFor="let move of moveList" class="move-preview">
+            <h3>To: {{move.to}}</h3>
+            <p>At: {{move.at | date}}</p>
+            <p>Amount: {{move.amount | currency:'BTC '}}</p>
+        </li>
+    </ul>
+</div>

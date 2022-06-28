@@ -1,0 +1,13 @@
+@mixin afterDecorator {
+    &::after {
+        content: "";
+        position: absolute;
+        background-color: #8685EF;
+        width: 93%;
+        height: 95%;
+        top: 20px;
+        border-radius: 30px;
+        transform: skew(0deg, 3deg);
+        z-index: -10;
+    }
+}

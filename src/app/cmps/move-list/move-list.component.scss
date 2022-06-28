@@ -1,0 +1,22 @@
+@import 'src/assets/style/variables';
+
+.move-list {
+    .title {
+        text-align: center;
+    }
+
+    .list {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-block-start: 20px;
+
+        .move-preview {
+            position: relative;
+            background-color: $primary1-d2;
+            padding: 20px 10px;
+            border-radius: 20px;
+            box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.067);
+        }
+    }
+}
