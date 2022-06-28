@@ -17,7 +17,7 @@ import { AppHeaderComponent } from './cmps/app-header/app-header.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { MoveListComponent } from './cmps/move-list/move-list.component';
 import { TransferFundComponent } from './cmps/transfer-fund/transfer-fund.component';
-import { FilterContactsPipe } from './pipes/filter-contacts.pipe';
+import { filterArrayPipe } from './pipes/filter-array.pipe';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,7 @@ import { FilterContactsPipe } from './pipes/filter-contacts.pipe';
     SignupComponent,
     MoveListComponent,
     TransferFundComponent,
-    FilterContactsPipe,
+    filterArrayPipe,
   ],
   imports: [
     BrowserModule,

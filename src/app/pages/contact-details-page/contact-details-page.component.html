@@ -7,9 +7,9 @@
         <section class="tools">
             <a [routerLink]="['/contact', 'edit', contact._id]" class="edit btn">Edit</a>
             <button (click)="onDelete()" class="delete btn">Delete</button>
-        </section>
+        </section>filterArray
     </section>
     <transfer-fund [contact]="contact"></transfer-fund>
-    <move-list [title]="'Transactions with ' + contact.name" [moveList]="user.moves | filterContacts : 'subjectId' : contact._id!"></move-list>
+    <move-list [title]="'Transactions with ' + contact.name" [moveList]="user.moves | filterArray : 'subjectId' : contact._id!"></move-list>
 
 </div>

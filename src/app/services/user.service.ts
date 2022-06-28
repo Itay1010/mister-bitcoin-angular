@@ -34,7 +34,7 @@ export class UserService {
   }
   transferCoin(diff: number, contactInfo: { name: string, _id: string }) {
     const user = this.getFromStorage()
-    const newMove = new Move(contactInfo._id, contactInfo.name, Date.now(), diff)
+    const newMove = new Move(contactInfo._id, contactInfo.name, Date.now(), Math.abs(diff))
     user.coins += diff
     user.moves.unshift(newMove)
     this.saveToStorage(user)

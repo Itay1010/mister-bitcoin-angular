@@ -4,5 +4,5 @@
         <h2>{{user.name}}</h2>
         <h3>BTC: {{btcRate | async}}</h3>
     </section>
-    <move-list [title]="'Transactions'" [moveList]="user.moves"></move-list>
+    <move-list [title]="'Transactions'" [moveList]="user.moves.slice(0, 3)"></move-list>
 </div>

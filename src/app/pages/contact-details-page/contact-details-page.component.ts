@@ -30,6 +30,7 @@ export class ContactDetailsPageComponent implements OnInit {
   onDelete() {
     this.contactService.deleteContact(this.contact._id as string)
     this.router.navigateByUrl('/contact')
+    
   }
 
 }
