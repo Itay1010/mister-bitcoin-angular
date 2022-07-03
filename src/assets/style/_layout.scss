@@ -1,8 +1,21 @@
-.main-layout {
-    display: grid;
-    grid-template-columns: $side-margin 1fr $side-margin;
-    grid-template-rows: 60px repeat(auto-fit, minmax(100px, 100%)) 30px;
+@import 'mixins';
+@include mobile-layout {
+    .main-layout {
+        display: grid;
+        grid-template-columns: 10px 1fr 10px;
+        grid-template-rows: 75px repeat(auto-fit, minmax(100px, 100%)) 30px;
+    }
 
+
+}
+
+@include narrow-layout {
+
+    .main-layout {
+        display: grid;
+        grid-template-columns: $side-margin 1fr $side-margin;
+        grid-template-rows: 75px repeat(auto-fit, minmax(100px, 100%)) 30px;
+    }
 }
 
 .full {
@@ -11,5 +24,5 @@
 
 .center {
     grid-column: 2 / 3;
-    
+
 }

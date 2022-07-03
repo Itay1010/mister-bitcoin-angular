@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactService } from 'src/app/services/contact.service';
-import { Contact } from 'src/app/modules/contact.module';
+import { Contact, User } from 'src/app/modules/main.module';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'contact-details-page',
@@ -10,12 +11,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ContactDetailsPageComponent implements OnInit {
 
-  constructor(private contactService: ContactService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private contactService: ContactService, private userService: UserService, private route: ActivatedRoute, private router: Router) { }
 
   contact!: Contact
+  user!: User
 
   ngOnInit(): void {
     try {
+      this.userService.loadUser().subscribe(user => this.user = user as User)
       this.route.data.subscribe(data => {
         this.contact = data['contact']
       })
@@ -27,6 +30,7 @@ export class ContactDetailsPageComponent implements OnInit {
   onDelete() {
     this.contactService.deleteContact(this.contact._id as string)
     this.router.navigateByUrl('/contact')
+
   }
 
 }

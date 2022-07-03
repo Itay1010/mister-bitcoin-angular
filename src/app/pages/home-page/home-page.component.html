@@ -1,7 +1,8 @@
 <div class="home-page">
     <section class="user-info">
-        <img src="https://robohash.org/{{user.name}}.org?set=set3" alt="">
+        <img src="https://robohash.org/{{user.name}}.org?set=set3" alt="Loading image...">
         <h2>{{user.name}}</h2>
-        <h3>{{btcRate | async}}</h3>
+        <h3>BTC: {{btcRate | async}}</h3>
     </section>
+    <move-list [title]="'Transactions'" [moveList]="user.moves.slice(0, 3)"></move-list>
 </div>

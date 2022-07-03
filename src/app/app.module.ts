@@ -14,6 +14,12 @@ import { ContactPreviewComponent } from './cmps/contact-preview/contact-preview.
 import { StatisticPageComponent } from './pages/statistic-page/statistic-page.component';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { AppHeaderComponent } from './cmps/app-header/app-header.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { MoveListComponent } from './cmps/move-list/move-list.component';
+import { TransferFundComponent } from './cmps/transfer-fund/transfer-fund.component';
+import { filterArrayPipe } from './pipes/filter-array.pipe';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -26,6 +32,10 @@ import { AppHeaderComponent } from './cmps/app-header/app-header.component';
     ContactPreviewComponent,
     StatisticPageComponent,
     AppHeaderComponent,
+    SignupComponent,
+    MoveListComponent,
+    TransferFundComponent,
+    filterArrayPipe,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +43,13 @@ import { AppHeaderComponent } from './cmps/app-header/app-header.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    Ng2GoogleChartsModule
+    Ng2GoogleChartsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

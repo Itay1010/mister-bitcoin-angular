@@ -37,7 +37,7 @@ button {
 }
 
 input {
-    &:hover {
+    &:focus {
         outline: none;
     }
 }

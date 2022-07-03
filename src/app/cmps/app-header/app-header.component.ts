@@ -9,6 +9,20 @@ export class AppHeaderComponent implements OnInit {
 
   constructor() { }
 
+  isMenuOpen: boolean = false
+
+  navClass = {
+    menuOpen: this.isMenuOpen
+  }
+
+  toggleChangeMenu() {
+    this.isMenuOpen = !this.isMenuOpen
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false
+  }
+
   ngOnInit(): void {
   }
 

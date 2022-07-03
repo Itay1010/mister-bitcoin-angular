@@ -1,4 +1,5 @@
 @import 'src/assets/style/variables';
+
 .contact-list {
     display: flex;
     flex-direction: column;
@@ -7,4 +8,11 @@
     margin: 10px auto;
     gap: 50px 0;
 
+    .add-btn {
+        background-color: $primary2-d2;
+        text-decoration: none;
+        color: whitesmoke;
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
 }
