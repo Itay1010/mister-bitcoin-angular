@@ -18,7 +18,7 @@ export class ContactDetailsPageComponent implements OnInit {
 
   ngOnInit(): void {
     try {
-      this.userService.getUser().subscribe(user => this.user = user)
+      this.userService.loadUser().subscribe(user => this.user = user as User)
       this.route.data.subscribe(data => {
         this.contact = data['contact']
       })
@@ -30,7 +30,7 @@ export class ContactDetailsPageComponent implements OnInit {
   onDelete() {
     this.contactService.deleteContact(this.contact._id as string)
     this.router.navigateByUrl('/contact')
-    
+
   }
 
 }

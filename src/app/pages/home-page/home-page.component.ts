@@ -17,8 +17,8 @@ export class HomePageComponent implements OnInit {
   btcRate!: Observable<number>
 
   async ngOnInit(): Promise<void> {
-    this.userService.getUser().subscribe(user => {
-      this.user = user
+    this.userService.loadUser().subscribe(user => {
+      this.user = user as User
     })
     const rate = await this.bitcoinService.getRate()
     this.btcRate = rate

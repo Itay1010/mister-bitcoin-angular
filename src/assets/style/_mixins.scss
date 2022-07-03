@@ -1,13 +1,23 @@
-@mixin afterDecorator {
-    &::after {
-        content: "";
-        position: absolute;
-        background-color: #8685EF;
-        width: 93%;
-        height: 95%;
-        top: 20px;
-        border-radius: 30px;
-        transform: skew(0deg, 3deg);
-        z-index: -10;
+@mixin mobile-layout {
+    @media (max-width: 640px) {
+      @content;
     }
-}
+  }
+  
+  @mixin narrow-layout {
+    @media (min-width: 640px) {
+      @content;
+    }
+  }
+  
+  @mixin medium-layout {
+    @media (min-width: 865px) {
+      @content;
+    }
+  }
+  
+  @mixin normal-layout {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }

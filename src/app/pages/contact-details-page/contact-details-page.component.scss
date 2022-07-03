@@ -12,7 +12,9 @@
     margin: auto;
     margin-top: 50px;
     border-radius: 40px;
-
+    &>* {
+        margin-bottom: 10px;
+    }
 
     &::after {
         content: "";
@@ -36,6 +38,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-top: 30px;
 
         .btn {
             font-size: 1em;

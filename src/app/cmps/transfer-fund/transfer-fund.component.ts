@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { FormControl, FormControlOptions, NgForm, ValidatorFn } from '@angular/forms';
 import { Contact } from 'src/app/modules/main.module';
 import { UserService } from 'src/app/services/user.service';
 
@@ -14,14 +15,19 @@ export class TransferFundComponent implements OnInit {
   @Input() contact!: Contact
 
   amount = 0
+  isSubmitting = false
 
   ngOnInit(): void {
   }
 
-  onTransferCoins() {
-    if(!this.contact?._id) return
+  async onTransferCoins(form: NgForm) {
+    const { amount } = form.value
+    if (!this.contact?._id || amount <= 0) return alert('value cannot be 0')
+    form.reset({ amount: 0 })
+    this.isSubmitting = true
     const { name, _id } = this.contact
-    this.userService.transferCoin(-this.amount, { name, _id })
+    await this.userService.transferCoin(-this.amount, { name, _id })
+    this.isSubmitting = false
   }
 
 }

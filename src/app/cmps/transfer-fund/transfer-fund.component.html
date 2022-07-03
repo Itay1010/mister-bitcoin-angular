@@ -1,7 +1,8 @@
-<div (submit)="onTransferCoins()" class="transaction-container">
+<div class="transaction-container">
     <h1>Transfer funds</h1>
-    <form>
-        <input type="number" name="amount" [(ngModel)]="amount">
+    <form *ngIf="!isSubmitting" #form="ngForm" (ngSubmit)="onTransferCoins(form)">
+        <input type="number" name="amount"  min="0" [(ngModel)]="amount" autocomplete="off">
         <button>Transfer</button>
     </form>
+    <img *ngIf="isSubmitting" src="assets/animations/inline-loader.gif" alt="Loading...">
 </div>

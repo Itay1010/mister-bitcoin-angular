@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 import { Contact, Move, User } from '../modules/main.module';
 import { StorageService } from './storage.service';
 
@@ -13,7 +13,9 @@ export class UserService {
 
   constructor(private storageService: StorageService) { }
 
-  isLogin = false
+  private isLogin: boolean = false
+  private _user = new BehaviorSubject<User | null>(null)
+  public user: Observable<User | null> = this._user.asObservable()
 
   checkIsLogin() {
     const user = this.isLogin || this.getFromStorage()
@@ -21,23 +23,30 @@ export class UserService {
     return this.isLogin
   }
 
-  getUser() {
+  loadUser() {
     const user = this.getFromStorage()
-    this.isLogin = !!user
-    return of(user)
+    this._user.next(user)
+    return this.user
   }
 
   signup(name: string) {
     const newUser = new User(name)
     this.saveToStorage(newUser)
-    this.isLogin = true
+    this._user.next(newUser)
   }
-  transferCoin(diff: number, contactInfo: { name: string, _id: string }) {
+
+  async transferCoin(diff: number, contactInfo: { name: string, _id: string }) {
     const user = this.getFromStorage()
     const newMove = new Move(contactInfo._id, contactInfo.name, Date.now(), Math.abs(diff))
     user.coins += diff
     user.moves.unshift(newMove)
     this.saveToStorage(user)
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        this._user.next(user)
+        resolve(null)
+      }, 1500)
+    })
   }
 
   getFromStorage(): User {
