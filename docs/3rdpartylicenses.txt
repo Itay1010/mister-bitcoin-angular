@@ -13,6 +13,9 @@ MIT
 @angular/router
 MIT
 
+@angular/service-worker
+MIT
+
 ng2-google-charts
 MIT
 MIT License
