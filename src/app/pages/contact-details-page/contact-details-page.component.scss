@@ -1,6 +1,29 @@
 @import 'src/assets/style/variables';
 @import 'src/assets/style/mixins';
 
+@include mobile-layout {
+    .contact-details {
+        padding: 10px;
+        img {
+            width: 200px;
+            align-self: center;
+        }
+
+    }
+}
+
+@include narrow-layout {
+    .contact-details {
+        padding: 50px;
+
+        img {
+            width: 300px;
+            align-self: center;
+        }
+
+    }
+}
+
 .contact-details {
     display: flex;
     flex-direction: column;
@@ -8,7 +31,6 @@
     background-color: $primary3;
     color: white;
     width: fit-content;
-    padding: 50px;
     margin: auto;
     margin-top: 50px;
     border-radius: 40px;
@@ -29,11 +51,6 @@
         z-index: -10;
     }
 
-    img {
-        width: 300px;
-        align-self: center;
-    }
-
     .tools {
         display: flex;
         align-items: center;
@@ -44,6 +61,7 @@
             font-size: 1em;
             text-decoration: none;
             background-color: $secondary3-l1;
+            color: whitesmoke;
             padding: 5px 10px;
             border-radius: 5px;
             cursor: pointer;

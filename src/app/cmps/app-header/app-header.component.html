@@ -3,8 +3,12 @@
         <h1 class="logo">Mister.Bit(Coin)</h1>
     </a>
 
-    <nav>
-        <a routerLink="/contact" routerLinkActive="active">Contacts</a>
-        <a routerLink="/statistics" routerLinkActive="active">Statistics</a>
+    <button (click)="toggleChangeMenu()" class="menu-btn">
+        <img src="assets/icons/menu-icon.png" alt="">
+    </button>
+    <nav [ngClass]="{ 'menu-open': isMenuOpen }" (click)="$event.stopPropagation()">
+        <a (click)="closeMenu()" routerLink="/contact" routerLinkActive="active">Contacts</a>
+        <a (click)="closeMenu()" routerLink="/statistics" routerLinkActive="active">Statistics</a>
     </nav>
+    <div *ngIf="isMenuOpen" class="screen" (click)="toggleChangeMenu()"></div>
 </div>

@@ -4,12 +4,88 @@
 @include mobile-layout {
     .app-header {
         padding: 10px;
+
+        .menu-btn {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            right: 10px;
+            border-radius: 50%;
+            aspect-ratio: 1/1;
+            cursor: pointer;
+
+            img {
+                width: 20px;
+            }
+        }
+
+        .screen {
+            display: none;
+        }
+
+        .menu-open~.screen {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.268);
+            z-index: 50;
+        }
+
+        nav {
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            right: 50%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.653);
+            color: white;
+            padding: 20px 0;
+            transform: translate(50%, -300px);
+            transition: transform .3s;
+            z-index: 100;
+
+
+            &.menu-open {
+                transform: translate(50%, 0px);
+                top: 0;
+
+            }
+
+            >:not(:last-child) {
+                margin-bottom: 20px;
+            }
+
+        }
     }
 }
+
 @include narrow-layout {
     .app-header {
         padding: 10px $side-margin;
+
+        .menu-btn {
+            display: none;
+        }
+
+
+        nav {
+            position: relative;
+
+            >:not(:last-child) {
+                margin-right: 20px;
+            }
+
+            .screen {
+                display: none;
+            }
+
+        }
     }
+
 }
 
 .app-header {
@@ -75,14 +151,5 @@
                 color: $primary1-l2;
             }
         }
-
-
-
-        >:not(:last-child) {
-            margin-right: 20px;
-        }
-
-
-
     }
 }
