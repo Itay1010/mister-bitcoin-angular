@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mister-bit-coin",
+            "outputPath": "docs",
             "baseHref": "/",
             "index": "src/index.html",
             "main": "src/main.ts",
