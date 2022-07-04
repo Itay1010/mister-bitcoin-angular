@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1656883209110,
+  "timestamp": 1656928378392,
   "index": "/mister-bitcoin-angular/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/mister-bitcoin-angular/favicon.ico",
         "/mister-bitcoin-angular/index.html",
-        "/mister-bitcoin-angular/main.e65efdb7bd294956.js",
+        "/mister-bitcoin-angular/main.640b7523899b1301.js",
         "/mister-bitcoin-angular/manifest.webmanifest",
         "/mister-bitcoin-angular/polyfills.6b7947b128258ec8.js",
         "/mister-bitcoin-angular/runtime.3f397e5f88f9d871.js",
@@ -50,8 +50,8 @@
     "/mister-bitcoin-angular/assets/style/_mixins.scss": "c90f69299562e8c9c200d9bf5b5b52810f7daeeb",
     "/mister-bitcoin-angular/assets/style/_variables.scss": "8e07976fe8fe8c432707067f1b76fd7d60d7bd39",
     "/mister-bitcoin-angular/favicon.ico": "077121b1a8b2d0b0f6420ee9b3226a118ef64d73",
-    "/mister-bitcoin-angular/index.html": "97bd71734c40faf55d72eace3b667eb795bd2c6e",
-    "/mister-bitcoin-angular/main.e65efdb7bd294956.js": "06a63e9d77ad76f010fa1565e3f1edf06f9ebd87",
+    "/mister-bitcoin-angular/index.html": "e636a80b334e29fe96d798bdaae8b4af19fd2ab3",
+    "/mister-bitcoin-angular/main.640b7523899b1301.js": "a009b7b830b61b20b703f9b295de6e5007b86ed9",
     "/mister-bitcoin-angular/manifest.webmanifest": "f0fc53c0d8a65783af79a62395f8830ea04b6c93",
     "/mister-bitcoin-angular/polyfills.6b7947b128258ec8.js": "8c0af0e23689147a828c4782ac3043a2a743ef84",
     "/mister-bitcoin-angular/runtime.3f397e5f88f9d871.js": "5e754767ac77f250c1b2d8a44531697725d097bc",
